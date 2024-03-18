@@ -60,3 +60,4 @@
 
 *.jpg binary
 *.png binary
+*.svg text eol=lf
