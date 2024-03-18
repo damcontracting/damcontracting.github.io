@@ -637,7 +637,7 @@
                             </div>
                         </div>
                         <div class="uk-width-3-5@m">
-                            <form action="" id="">
+                            <form action="" id="submit-form">
                                 <!-- Hidden Required Fields -->
                                 <input type="hidden" name="project_name" value="Suprek - Top-Of-The-Line Equipment Rentals">
                                 <input type="hidden" name="admin_email" value="test@gmail.com">
@@ -652,6 +652,25 @@
                                     <div class="uk-width-1-1"><button class="uk-button uk-button-default uk-button-large" type="submit"><span>Send now</span><span data-uk-icon="arrow-right"></span></button></div>
                                 </div>
                             </form>
+                            <script>
+                                $("#submit-form").submit((e)=>{
+                                e.preventDefault()
+                                $.ajax({
+                                url:"https://script.google.com/macros/s/AKfycbzF8IP2jxQJyOfzGQqS9HtYs6o_UO2udKVd-Q0NkP4AXdBQ47OPjDva6ACdliAwhHrOuw/exec",
+                                data:$("#submit-form").serialize(),
+                                method:"post",
+                                success:function (response){
+                                alert("Our sales team will contact you shortly. Thank you!")
+                                window.location.reload()
+                                //window.location.href="https://google.com"
+                                },
+                                error:function (err){
+                                alert("Something Error")
+                                
+                                }
+                                })
+                                })
+                                </script>
                         </div>
                     </div>
                 </div>
